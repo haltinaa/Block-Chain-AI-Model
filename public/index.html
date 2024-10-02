@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>AI Model Marketplace</title>
+
+</head>
+
+<body>
+    <div class="container">
+        <h1>AI Model Marketplace</h1>
+
+        <!-- Учетная запись пользователя -->
+        <section>
+            <h2>Аккаунт</h2>
+            <div id="currentAccount">Адрес: <span>0x0000...0000</span></div>
+            <button id="switchAccount"><i class="fas fa-exchange-alt"></i> Сменить аккаунт</button>
+        </section>
+
+        <!-- Форма для добавления модели -->
+        <section>
+            <h2>Добавить модель</h2>
+            <form id="addModelForm">
+                <div class="form-group">
+                    <label for="modelName">Название</label>
+                    <input type="text" id="modelName" placeholder="Введите название модели" required />
+                </div>
+                <div class="form-group">
+                    <label for="modelDescription">Описание</label>
+                    <input type="text" id="modelDescription" placeholder="Введите описание модели" required />
+                </div>
+                <div class="form-group">
+                    <label for="modelPrice">Цена в Wei</label>
+                    <input type="number" id="modelPrice" placeholder="Введите цену в Wei" required />
+                </div>
+                <button type="submit" id="addModelButton" class="btn">Добавить модель</button>
+            </form>
+        </section>
+
+
+        <!-- Список доступных моделей -->
+        <section>
+            <h2>Доступные модели</h2>
+            <div id="models">
+                <!-- Here models will be displayed dynamically -->
+            </div>
+        </section>
+
+        <section>
+            <div id="model-list"></div> <!-- Ensure this exists in your HTML -->
+        </section>
+
+        <!-- Форма для покупки модели -->
+        <section>
+            <h2>Купить модель</h2>
+            <div class="form-inline">
+                <input type="number" id="modelId" placeholder="ID модели" required>
+                <button id="purchaseModel" class="btn">Купить модель</button>
+            </div>
+        </section>
+
+        <!-- Форма для оценки модели -->
+        <section>
+            <h2>Оценить модель</h2>
+            <div class="form-inline">
+                <input type="number" id="ratingId" placeholder="ID модели" required>
+                <input type="number" id="modelRating" placeholder="Рейтинг (1-5)" required>
+                <button id="rateModel" class="btn">Оценить модель</button>
+            </div>
+        </section>
+
+        <!-- Кнопка для просмотра деталей модели -->
+        <section>
+            <h2>Детали модели</h2>
+            <div class="form-inline">
+                <input type="number" id="detailsId" placeholder="ID модели" required>
+                <button id="getModelDetails" class="btn">Посмотреть детали</button>
+            </div>
+            <div id="modelDetails">
+                <!-- Model details will be displayed here -->
+            </div>
+        </section>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.6.1/web3.min.js"></script>
+    <script src="abi.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
